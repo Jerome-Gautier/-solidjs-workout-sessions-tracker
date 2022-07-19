@@ -1,0 +1,21 @@
+.calendar-outer-container {
+    width: 1750px;
+    margin: auto;
+}
+
+.weekdays-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.weekdays-container .fulldays-cells {
+    width: 250px;
+    text-align: center;
+}
+
+.cell-width {
+    width: 250px;
+    height: 250px;
+}

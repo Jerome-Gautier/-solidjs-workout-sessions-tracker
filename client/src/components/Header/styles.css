@@ -1,0 +1,53 @@
+.title-container {
+    margin: auto;
+}
+
+.title-container h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.title-container .month-container {
+    font-size: 18px;
+}
+
+.title-container .year-container {
+    font-size: 18px;
+}
+
+.month-tools-container {
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+}
+
+.month-tools-container div:nth-child(2),
+.month-tools-container div:nth-child(3) {
+    text-align: center;
+    width: 150px;
+}
+
+.month-tools-container .btn-month-selector {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    flex-flow: row nowrap;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+.month-tools-container .btn-month-selector:hover {
+    filter: brightness(75%);
+}
+
+.month-tools-container .btn-month-selector div {
+    margin: auto;
+}
