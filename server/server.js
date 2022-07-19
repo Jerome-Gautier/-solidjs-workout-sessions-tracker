@@ -25,7 +25,7 @@ app.post("/save_calendar", (req, res) => {
 
     fs.writeFile(path, JSON.stringify(data), (err) => {
         if (err) {
-            res.json({ status: "404" });
+            res.json({ status: "Something went wrong while updating the Json." });
         } else {
             res.json({ status: "ok" });
         }
