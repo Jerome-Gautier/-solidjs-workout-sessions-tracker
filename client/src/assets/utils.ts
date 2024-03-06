@@ -1,4 +1,4 @@
-import { date, setDate, setMonthTable, calendarTable, monthTable } from "../store";
+import { date, setDate, setMonthTable, calendarTable, monthTable, exercisesList, setExercisesList } from "../store";
 import { apiUrl } from "./config";
 import axios from "axios";
 
@@ -37,6 +37,17 @@ export const loadCurrentMonth = (dateObject: { day: number, month: number, year:
     if (!obj[str][fullMonth]) obj[str][fullMonth] = {}
 
     setMonthTable(obj[str][fullMonth] || undefined);
+    let arr = Object.keys(monthTable());
+    let newArr = exercisesList();
+    arr.forEach(str => {
+        let table = monthTable()[str]
+        table.forEach((obj: any) => {
+            if (!exercisesList().includes(obj.exercise)) {
+                newArr.push(obj.exercise);
+            }
+        });
+    });
+    setExercisesList(newArr);    
 }
 
 export const getJson = async () => {

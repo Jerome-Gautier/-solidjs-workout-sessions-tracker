@@ -12,7 +12,7 @@ import "./styles.css";
 const App: Component = () => {
   createRenderEffect(async () => {
     const response: any = await getJson();
-    setCalendarTable(response.data || { '2022': {} });
+    setCalendarTable(response.data || { '2024': {} });
   });
 
   return (
