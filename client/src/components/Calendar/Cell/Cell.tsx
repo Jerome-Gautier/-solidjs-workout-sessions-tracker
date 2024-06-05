@@ -14,6 +14,15 @@ export default function Cell(props: any) {
 
     let monthObj = monthTable();
 
+    const handleChangeDate = (e: any) => {
+        setDate({ ...date(), day: props.dayNumber });
+        e.target.scrollIntoView({ 
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center' 
+        });
+    }
+
     const handleChange = (e: any) => {
         setNewExercise({ ...newExercise(), [e.target.id]: e.target.value });
     }
@@ -57,7 +66,7 @@ export default function Cell(props: any) {
     return (
         <div class="cell-container">
             {props.dayNumber ?
-                <div class={`cells ${props.dayNumber === date().day && "selected"} cell-width`} onclick={() => setDate({ ...date(), day: props.dayNumber })}>
+                <div class={`cells ${props.dayNumber === date().day && "selected"} cell-width`} id={props.dayNumber === date().day ? "current-day" : ""} onclick={handleChangeDate}>
                     <div class="day-number">{props.dayNumber}</div>
                     <div class="session-outer-container">
                         <div class="session-inner-container">

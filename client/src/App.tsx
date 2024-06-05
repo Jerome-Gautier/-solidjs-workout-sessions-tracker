@@ -3,11 +3,11 @@ import { HopeProvider } from '@hope-ui/solid';
 import { getJson } from './assets/utils';
 import { calendarTable, setCalendarTable } from './store';
 
+import Topbar from './components/Topbar/Topbar';
 import Header from './components/Header/Header';
 import Calendar from './components/Calendar/Calendar';
 
 import "./styles.css";
-
 
 const App: Component = () => {
   createRenderEffect(async () => {
@@ -19,6 +19,7 @@ const App: Component = () => {
     <HopeProvider>
       <Show when={calendarTable()}>
         <div class="app-container">
+          <Topbar />
           <Header />
           <Calendar />
         </div>

@@ -17,9 +17,11 @@ export const loadCurrentMonth = (dateObject: { day: number, month: number, year:
         month: "long",
         day: "numeric"
     });
-    const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
-    const fullMonth = dateString.split(", ")[1].split(' ')[1]
-    const fullWeekDay = dateString.split(", ")[0];
+    console.log(dateString.split(" "));
+    const paddingDays = weekdays.indexOf(dateString.split(" ")[0]);
+    const fullMonth = dateString.split(" ")[2];
+    const fullWeekDay = dateString.split(" ")[0];
+    console.log(fullMonth + ", " + fullWeekDay);
     let monthArray = [];
     let currentDay = 1;
     for (let i = 0; i < 42; i++) {
